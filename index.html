@@ -1,77 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuzzgaze | Fan Club & Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #181A1F; color: #F3F4F6; }
-        .bg-card { background-color: #242832; }
-        .text-blue-accent { color: #3B82F6; }
-        .bg-blue-accent { background-color: #3B82F6; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #181A1F; color: #F3F4F6; }
+        
+        .glow-blue { background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%); }
+        .glass-card { background: rgba(36, 40, 50, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hover-lift:hover { transform: translateY(-8px); border-color: rgba(59, 130, 246, 0.5); }
     </style>
 </head>
-<body>
+<body class="glow-blue">
 
-    <!-- Navigation -->
-    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
-        <h1 class="text-2xl font-bold">FUZZGAZE</h1>
-        <div class="hidden md:flex gap-6 text-gray-400">
-            <a href="#" class="hover:text-white">Home</a>
-            <a href="#videos" class="hover:text-white">Videos</a>
-            <a href="#community" class="hover:text-white">Community</a>
-            <a href="#about" class="hover:text-white">About</a>
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#181A1F]/80 border-b border-white/5 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <span class="text-2xl font-bold tracking-tight">FUZZGAZE</span>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#" class="hover:text-blue-500 transition">Home</a>
+                <a href="#videos" class="hover:text-blue-500 transition">Videos</a>
+                <a href="#community" class="hover:text-blue-500 transition">Community</a>
+            </div>
+            <a href="#" class="bg-blue-600 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-500 transition">Join Discord</a>
         </div>
-        <a href="#" class="bg-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-500 transition">Join Discord</a>
     </nav>
 
     <!-- Hero -->
-    <section class="text-center py-20 px-6">
-        <h2 class="text-6xl font-bold mb-4">FUZZGAZE</h2>
-        <p class="text-xl text-gray-400 mb-8">Fan Club & Community</p>
-        <p class="max-w-2xl mx-auto mb-10 text-gray-300">A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="https://youtube.com/@Fuzzgaze" class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 transition">Watch on YouTube</a>
-            <a href="#" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition">Join Discord</a>
+    <header class="py-24 px-6 text-center">
+        <h1 class="text-7xl font-extrabold mb-6 tracking-tighter">FUZZGAZE</h1>
+        <p class="text-2xl text-blue-400 font-light mb-6">Fan Club & Community</p>
+        <p class="max-w-xl mx-auto text-gray-400 mb-10 leading-relaxed">A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.</p>
+        <div class="flex justify-center gap-4">
+            <a href="https://youtube.com/@Fuzzgaze" class="px-8 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition">Watch on YouTube</a>
+            <a href="#" class="px-8 py-3 bg-blue-600 rounded-xl hover:bg-blue-500 transition">Join Discord</a>
         </div>
-    </section>
+    </header>
 
     <!-- Top Videos -->
-    <section id="videos" class="py-16 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-10 text-center">Top Videos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-            <!-- Video 2 -->
-            <div class="bg-card p-6 rounded-xl hover:scale-105 transition duration-300">
-                <span class="text-blue-500 font-bold text-xl">#2</span>
-                <iframe class="w-full aspect-video my-4 rounded-lg" src="https://www.youtube.com/embed/gFKX3EmAAfo" allowfullscreen></iframe>
-                <a href="https://youtube.com/shorts/gFKX3EmAAfo" class="block bg-blue-600 text-center py-2 rounded-lg font-medium">Watch Video</a>
+    <section id="videos" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">Top Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 2 -->
+            <div class="glass-card p-4 rounded-2xl hover-lift transition-all">
+                <span class="text-blue-500 font-bold block mb-4">#2</span>
+                <iframe class="w-full aspect-[9/16] rounded-xl mb-4" src="https://www.youtube.com/embed/gFKX3EmAAfo"></iframe>
+                <a href="https://youtube.com/shorts/gFKX3EmAAfo" class="block text-center py-3 bg-white/5 rounded-lg hover:bg-blue-600 transition">Watch Video</a>
             </div>
-            <!-- Video 1 (Prominent) -->
-            <div class="bg-card p-8 rounded-xl hover:scale-105 transition duration-300 border-2 border-blue-500">
-                <span class="text-blue-500 font-bold text-2xl">#1</span>
-                <iframe class="w-full aspect-video my-4 rounded-lg" src="https://www.youtube.com/embed/8dSYVh5qOPI" allowfullscreen></iframe>
-                <a href="https://youtube.com/shorts/8dSYVh5qOPI" class="block bg-blue-600 text-center py-3 rounded-lg font-bold text-lg">Watch Video</a>
+            <!-- Card 1 (Prominent) -->
+            <div class="glass-card p-6 rounded-2xl hover-lift transition-all border-blue-500/30">
+                <span class="text-blue-500 font-bold block mb-4 text-xl">#1</span>
+                <iframe class="w-full aspect-[9/16] rounded-xl mb-4" src="https://www.youtube.com/embed/8dSYVh5qOPI"></iframe>
+                <a href="https://youtube.com/shorts/8dSYVh5qOPI" class="block text-center py-4 bg-blue-600 rounded-lg hover:bg-blue-500 transition font-bold">Watch Video</a>
             </div>
-            <!-- Video 3 -->
-            <div class="bg-card p-6 rounded-xl hover:scale-105 transition duration-300">
-                <span class="text-blue-500 font-bold text-xl">#3</span>
-                <iframe class="w-full aspect-video my-4 rounded-lg" src="https://www.youtube.com/embed/iUizQBsTRPM" allowfullscreen></iframe>
-                <a href="https://youtube.com/shorts/iUizQBsTRPM" class="block bg-blue-600 text-center py-2 rounded-lg font-medium">Watch Video</a>
+            <!-- Card 3 -->
+            <div class="glass-card p-4 rounded-2xl hover-lift transition-all">
+                <span class="text-blue-500 font-bold block mb-4">#3</span>
+                <iframe class="w-full aspect-[9/16] rounded-xl mb-4" src="https://www.youtube.com/embed/iUizQBsTRPM"></iframe>
+                <a href="https://youtube.com/shorts/iUizQBsTRPM" class="block text-center py-3 bg-white/5 rounded-lg hover:bg-blue-600 transition">Watch Video</a>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-16 bg-gray-800 text-center px-6">
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center border-t border-white/5">
         <h2 class="text-3xl font-bold mb-6">About Fuzzgaze</h2>
-        <p class="max-w-xl mx-auto text-gray-400">Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.</p>
+        <p class="text-gray-400 text-lg leading-relaxed">Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.</p>
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 text-center text-gray-600 text-sm">
+    <footer class="py-12 text-center text-gray-600 text-sm border-t border-white/5">
         <p class="font-bold text-gray-400">FUZZGAZE</p>
-        <p class="mt-2">Fan Club & Community</p>
         <p class="mt-4">&copy; 2026 Fuzzgaze. All rights reserved.</p>
     </footer>
 
