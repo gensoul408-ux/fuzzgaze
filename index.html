@@ -3,204 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuzzgaze - Community & Creator</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Fuzzgaze | Fan Club & Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom subtle background effects */
-        body {
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        /* Subtle grid pattern */
-        .bg-grid-pattern {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-        }
-
-        /* Soft ambient glowing areas */
-        .ambient-glow-1 {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .ambient-glow-2 {
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(29, 78, 216, 0.05) 0%, rgba(11, 15, 25, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .ambient-glow-3 {
-            position: absolute;
-            bottom: 10%;
-            right: 10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(30, 64, 175, 0.06) 0%, rgba(11, 15, 25, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
+        body { background-color: #181A1F; color: #F3F4F6; }
+        .bg-card { background-color: #242832; }
+        .text-blue-accent { color: #3B82F6; }
+        .bg-blue-accent { background-color: #3B82F6; }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans antialiased bg-grid-pattern">
+<body>
 
-    <!-- Ambient background light effects -->
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
-    <div class="ambient-glow-3"></div>
-
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-wider text-white">Fuzzgaze</span>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
-                <a href="#videos" class="hover:text-blue-400 transition-colors">Videos</a>
-                <a href="#community" class="hover:text-blue-400 transition-colors">Community</a>
-                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="#discord" class="hidden sm:inline-block text-sm font-medium text-gray-300 hover:text-white transition-colors">Discord</a>
-                <a href="#discord" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-all shadow-lg shadow-blue-600/20">Join Us</a>
-            </div>
+    <!-- Navigation -->
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold">FUZZGAZE</h1>
+        <div class="hidden md:flex gap-6 text-gray-400">
+            <a href="#" class="hover:text-white">Home</a>
+            <a href="#videos" class="hover:text-white">Videos</a>
+            <a href="#community" class="hover:text-white">Community</a>
+            <a href="#about" class="hover:text-white">About</a>
         </div>
-    </header>
+        <a href="#" class="bg-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-500 transition">Join Discord</a>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-20 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                Welcome to the official <span class="text-blue-500">Fuzzgaze</span> community
-            </h1>
-            <p class="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed">
-                Your destination for exclusive content, discussions, updates, and a passionate community of creators and fans.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#videos" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-600/25">
-                    Latest Videos
-                </a>
-                <a href="#community" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-gray-300 font-medium px-8 py-3 rounded-xl border border-gray-800 transition-all">
-                    Explore Community
-                </a>
+    <!-- Hero -->
+    <section class="text-center py-20 px-6">
+        <h2 class="text-6xl font-bold mb-4">FUZZGAZE</h2>
+        <p class="text-xl text-gray-400 mb-8">Fan Club & Community</p>
+        <p class="max-w-2xl mx-auto mb-10 text-gray-300">A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://youtube.com/@Fuzzgaze" class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 transition">Watch on YouTube</a>
+            <a href="#" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition">Join Discord</a>
+        </div>
+    </section>
+
+    <!-- Top Videos -->
+    <section id="videos" class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 text-center">Top Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+            <!-- Video 2 -->
+            <div class="bg-card p-6 rounded-xl hover:scale-105 transition duration-300">
+                <span class="text-blue-500 font-bold text-xl">#2</span>
+                <iframe class="w-full aspect-video my-4 rounded-lg" src="https://www.youtube.com/embed/gFKX3EmAAfo" allowfullscreen></iframe>
+                <a href="https://youtube.com/shorts/gFKX3EmAAfo" class="block bg-blue-600 text-center py-2 rounded-lg font-medium">Watch Video</a>
+            </div>
+            <!-- Video 1 (Prominent) -->
+            <div class="bg-card p-8 rounded-xl hover:scale-105 transition duration-300 border-2 border-blue-500">
+                <span class="text-blue-500 font-bold text-2xl">#1</span>
+                <iframe class="w-full aspect-video my-4 rounded-lg" src="https://www.youtube.com/embed/8dSYVh5qOPI" allowfullscreen></iframe>
+                <a href="https://youtube.com/shorts/8dSYVh5qOPI" class="block bg-blue-600 text-center py-3 rounded-lg font-bold text-lg">Watch Video</a>
+            </div>
+            <!-- Video 3 -->
+            <div class="bg-card p-6 rounded-xl hover:scale-105 transition duration-300">
+                <span class="text-blue-500 font-bold text-xl">#3</span>
+                <iframe class="w-full aspect-video my-4 rounded-lg" src="https://www.youtube.com/embed/iUizQBsTRPM" allowfullscreen></iframe>
+                <a href="https://youtube.com/shorts/iUizQBsTRPM" class="block bg-blue-600 text-center py-2 rounded-lg font-medium">Watch Video</a>
             </div>
         </div>
     </section>
 
-    <!-- Latest Videos Section -->
-    <section id="videos" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-white">Latest Videos</h2>
-            <span class="text-sm text-blue-400 hover:underline cursor-pointer">YouTube Feed</span>
-        </div>
-        <!-- Video Grid Ready for API -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Video Card 1 -->
-            <div class="bg-gray-900/60 backdrop-blur-sm border border-gray-800/80 rounded-2xl overflow-hidden hover:border-gray-700 transition-all">
-                <div class="aspect-video bg-gray-800 flex items-center justify-center text-gray-500">
-                    <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                <div class="p-5">
-                    <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">New Upload</span>
-                    <h3 class="text-lg font-semibold text-white mt-1 mb-2">Exploring the Future of Digital Content Creation</h3>
-                    <p class="text-sm text-gray-400">2 days ago • 4.5K views</p>
-                </div>
-            </div>
-            <!-- Video Card 2 -->
-            <div class="bg-gray-900/60 backdrop-blur-sm border border-gray-800/80 rounded-2xl overflow-hidden hover:border-gray-700 transition-all">
-                <div class="aspect-video bg-gray-800 flex items-center justify-center text-gray-500">
-                    <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                <div class="p-5">
-                    <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Community Spotlight</span>
-                    <h3 class="text-lg font-semibold text-white mt-1 mb-2">Building Better Workflows & Projects Together</h3>
-                    <p class="text-sm text-gray-400">5 days ago • 8.2K views</p>
-                </div>
-            </div>
-            <!-- Video Card 3 -->
-            <div class="bg-gray-900/60 backdrop-blur-sm border border-gray-800/80 rounded-2xl overflow-hidden hover:border-gray-700 transition-all">
-                <div class="aspect-video bg-gray-800 flex items-center justify-center text-gray-500">
-                    <svg class="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                <div class="p-5">
-                    <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Tutorial</span>
-                    <h3 class="text-lg font-semibold text-white mt-1 mb-2">Tips and Tricks Every Creator Should Know</h3>
-                    <p class="text-sm text-gray-400">1 week ago • 12K views</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 sm:p-12">
-            <div class="max-w-3xl">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">About Fuzzgaze</h2>
-                <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-                    Fuzzgaze is a dedicated space created for enthusiasts, followers, and creators alike. Our mission is to build a high-quality community sharing insights, discussions, and top-tier digital content.
-                </p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-gray-800">
-                    <div>
-                        <p class="text-2xl sm:text-3xl font-bold text-white">24/7</p>
-                        <p class="text-sm text-gray-400">Community Active</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl sm:text-3xl font-bold text-white">100%</p>
-                        <p class="text-sm text-gray-400">Dedicated Space</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Discord / Community Section -->
-    <section id="discord" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="bg-gradient-to-r from-blue-950/60 to-gray-900/60 backdrop-blur-md border border-blue-900/40 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
-            <div class="max-w-2xl mx-auto relative z-10">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Join the Discord Community</h2>
-                <p class="text-gray-300 mb-8">
-                    Connect directly with other fans, get real-time channel updates, participate in community events, and chat with everyone.
-                </p>
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-600/25">
-                    Join Discord Server
-                </a>
-            </div>
-        </div>
+    <!-- About -->
+    <section id="about" class="py-16 bg-gray-800 text-center px-6">
+        <h2 class="text-3xl font-bold mb-6">About Fuzzgaze</h2>
+        <p class="max-w-xl mx-auto text-gray-400">Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.</p>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 border-t border-gray-800/80 pt-12 pb-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div>
-                <span class="text-lg font-bold text-white">Fuzzgaze</span>
-                <p class="text-sm text-gray-500 mt-1">Built for the community, available 24/7.</p>
-            </div>
-            <div class="flex space-x-6 text-sm text-gray-400">
-                <a href="#home" class="hover:text-white transition-colors">Home</a>
-                <a href="#videos" class="hover:text-white transition-colors">Videos</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#discord" class="hover:text-white transition-colors">Discord</a>
-            </div>
-            <p class="text-xs text-gray-600">&copy; 2026 Fuzzgaze. All rights reserved.</p>
-        </div>
+    <footer class="py-10 text-center text-gray-600 text-sm">
+        <p class="font-bold text-gray-400">FUZZGAZE</p>
+        <p class="mt-2">Fan Club & Community</p>
+        <p class="mt-4">&copy; 2026 Fuzzgaze. All rights reserved.</p>
     </footer>
 
 </body>
