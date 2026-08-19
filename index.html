@@ -7,74 +7,221 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #181A1F; color: #F3F4F6; }
         
-        .glow-blue { background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%); }
-        .glass-card { background: rgba(36, 40, 50, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .hover-lift:hover { transform: translateY(-8px); border-color: rgba(59, 130, 246, 0.5); }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #181A1F; 
+            color: #F3F4F6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Strict Color System Cards & Elements */
+        .bg-custom-base { background-color: #181A1F; }
+        .bg-custom-card { background-color: #242832; }
+        .text-custom-main { color: #F3F4F6; }
+        .text-custom-secondary { color: #9CA3AF; }
+        .text-custom-blue { color: #3B82F6; }
+        .text-custom-lightblue { color: #60A5FA; }
+
+        /* Glass Card with strict color */
+        .glass-card { 
+            background: rgba(36, 40, 50, 0.75); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(59, 130, 246, 0.1); 
+        }
+        .hover-lift:hover { 
+            transform: translateY(-6px); 
+            border-color: rgba(59, 130, 246, 0.4); 
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Subtle Grid Pattern */
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        }
+
+        /* Animated Background Glowing Orbs */
+        @keyframes floatSlow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -40px) scale(1.08); }
+        }
+
+        @keyframes floatReverse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-40px, 30px) scale(0.95); }
+        }
+
+        .ambient-orb-1 {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(24, 26, 31, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+            animation: floatSlow 12s ease-in-out infinite;
+        }
+
+        .ambient-orb-2 {
+            position: absolute;
+            top: 45%;
+            left: 10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.05) 0%, rgba(24, 26, 31, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+            animation: floatReverse 15s ease-in-out infinite;
+        }
+
+        .ambient-orb-3 {
+            position: absolute;
+            top: 75%;
+            right: 10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, rgba(24, 26, 31, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+            animation: floatSlow 18s ease-in-out infinite;
+        }
+
+        /* Subtle Particles */
+        @keyframes particleDrift {
+            0% { transform: translateY(0px); opacity: 0.2; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-120px); opacity: 0.2; }
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(96, 165, 250, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: particleDrift linear infinite;
+        }
     </style>
 </head>
-<body class="glow-blue">
+<body class="bg-custom-base bg-grid text-custom-main">
+
+    <!-- Background Animated Atmosphere -->
+    <div class="ambient-orb-1"></div>
+    <div class="ambient-orb-2"></div>
+    <div class="ambient-orb-3"></div>
+
+    <!-- Small Subtle Background Particles -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="particle" style="width: 3px; height: 3px; top: 15%; left: 20%; animation-duration: 14s;"></div>
+        <div class="particle" style="width: 2px; height: 2px; top: 35%; left: 80%; animation-duration: 18s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; top: 65%; left: 30%; animation-duration: 22s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; top: 85%; left: 75%; animation-duration: 16s;"></div>
+    </div>
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#181A1F]/80 border-b border-white/5 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="text-2xl font-bold tracking-tight">FUZZGAZE</span>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="#" class="hover:text-blue-500 transition">Home</a>
-                <a href="#videos" class="hover:text-blue-500 transition">Videos</a>
-                <a href="#community" class="hover:text-blue-500 transition">Community</a>
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#181A1F]/85 border-b border-white/5 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center relative z-10">
+            <span class="text-2xl font-bold tracking-tight text-custom-main">FUZZGAZE</span>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-custom-secondary">
+                <a href="#" class="hover:text-custom-lightblue transition">Home</a>
+                <a href="#videos" class="hover:text-custom-lightblue transition">Videos</a>
+                <a href="#community" class="hover:text-custom-lightblue transition">Community</a>
+                <a href="#about" class="hover:text-custom-lightblue transition">About</a>
             </div>
-            <a href="#" class="bg-blue-600 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-500 transition">Join Discord</a>
+            <a href="#discord" class="bg-[#3B82F6] px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Join Discord</a>
         </div>
     </nav>
 
     <!-- Hero -->
-    <header class="py-24 px-6 text-center">
-        <h1 class="text-7xl font-extrabold mb-6 tracking-tighter">FUZZGAZE</h1>
-        <p class="text-2xl text-blue-400 font-light mb-6">Fan Club & Community</p>
-        <p class="max-w-xl mx-auto text-gray-400 mb-10 leading-relaxed">A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.</p>
-        <div class="flex justify-center gap-4">
-            <a href="https://youtube.com/@Fuzzgaze" class="px-8 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition">Watch on YouTube</a>
-            <a href="#" class="px-8 py-3 bg-blue-600 rounded-xl hover:bg-blue-500 transition">Join Discord</a>
+    <header class="relative py-28 px-6 text-center z-10">
+        <h1 class="text-7xl font-extrabold mb-4 tracking-tighter text-custom-main drop-shadow-[0_0_35px_rgba(59,130,246,0.2)]">FUZZGAZE</h1>
+        <p class="text-xl text-custom-lightblue font-medium mb-6">Fan Club & Community</p>
+        <p class="max-w-xl mx-auto text-custom-secondary mb-10 leading-relaxed text-lg">A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#videos" class="px-8 py-3.5 bg-[#242832] border border-white/10 rounded-xl hover:bg-white/5 transition font-medium">Watch on YouTube</a>
+            <a href="#discord" class="px-8 py-3.5 bg-[#3B82F6] rounded-xl hover:bg-blue-500 transition font-medium shadow-lg shadow-blue-500/25">Join Discord</a>
         </div>
     </header>
 
     <!-- Top Videos -->
-    <section id="videos" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center">Top Videos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="videos" class="relative py-20 px-6 max-w-6xl mx-auto z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2 text-custom-main">Top Videos</h2>
+            <p class="text-custom-secondary text-sm">Hand-picked top YouTube Shorts</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
             <!-- Card 2 -->
-            <div class="glass-card p-4 rounded-2xl hover-lift transition-all">
-                <span class="text-blue-500 font-bold block mb-4">#2</span>
-                <iframe class="w-full aspect-[9/16] rounded-xl mb-4" src="https://www.youtube.com/embed/gFKX3EmAAfo"></iframe>
-                <a href="https://youtube.com/shorts/gFKX3EmAAfo" class="block text-center py-3 bg-white/5 rounded-lg hover:bg-blue-600 transition">Watch Video</a>
+            <div class="bg-custom-card glass-card p-5 rounded-2xl hover-lift transition-all">
+                <span class="text-custom-blue font-bold block mb-3 text-lg">#2</span>
+                <div class="aspect-[9/16] rounded-xl mb-4 overflow-hidden bg-black/40 border border-white/5">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/gFKX3EmAAfo"></iframe>
+                </div>
+                <a href="https://youtube.com/shorts/gFKX3EmAAfo" target="_blank" class="block text-center py-3 bg-white/5 rounded-xl hover:bg-[#3B82F6] transition font-medium text-sm">Watch Video</a>
             </div>
             <!-- Card 1 (Prominent) -->
-            <div class="glass-card p-6 rounded-2xl hover-lift transition-all border-blue-500/30">
-                <span class="text-blue-500 font-bold block mb-4 text-xl">#1</span>
-                <iframe class="w-full aspect-[9/16] rounded-xl mb-4" src="https://www.youtube.com/embed/8dSYVh5qOPI"></iframe>
-                <a href="https://youtube.com/shorts/8dSYVh5qOPI" class="block text-center py-4 bg-blue-600 rounded-lg hover:bg-blue-500 transition font-bold">Watch Video</a>
+            <div class="bg-custom-card glass-card p-6 rounded-2xl hover-lift transition-all border-blue-500/30 shadow-xl shadow-blue-500/5">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-custom-blue font-bold text-xl">#1</span>
+                    <span class="text-xs bg-blue-500/10 text-custom-lightblue px-2.5 py-1 rounded-full font-medium border border-blue-500/20">Top Pick</span>
+                </div>
+                <div class="aspect-[9/16] rounded-xl mb-4 overflow-hidden bg-black/40 border border-white/5">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/8dSYVh5qOPI"></iframe>
+                </div>
+                <a href="https://youtube.com/shorts/8dSYVh5qOPI" target="_blank" class="block text-center py-3.5 bg-[#3B82F6] rounded-xl hover:bg-blue-500 transition font-bold shadow-lg shadow-blue-500/20">Watch Video</a>
             </div>
             <!-- Card 3 -->
-            <div class="glass-card p-4 rounded-2xl hover-lift transition-all">
-                <span class="text-blue-500 font-bold block mb-4">#3</span>
-                <iframe class="w-full aspect-[9/16] rounded-xl mb-4" src="https://www.youtube.com/embed/iUizQBsTRPM"></iframe>
-                <a href="https://youtube.com/shorts/iUizQBsTRPM" class="block text-center py-3 bg-white/5 rounded-lg hover:bg-blue-600 transition">Watch Video</a>
+            <div class="bg-custom-card glass-card p-5 rounded-2xl hover-lift transition-all">
+                <span class="text-custom-blue font-bold block mb-3 text-lg">#3</span>
+                <div class="aspect-[9/16] rounded-xl mb-4 overflow-hidden bg-black/40 border border-white/5">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/iUizQBsTRPM"></iframe>
+                </div>
+                <a href="https://youtube.com/shorts/iUizQBsTRPM" target="_blank" class="block text-center py-3 bg-white/5 rounded-xl hover:bg-[#3B82F6] transition font-medium text-sm">Watch Video</a>
             </div>
         </div>
     </section>
 
+    <!-- Community Section -->
+    <section id="community" class="relative py-20 px-6 max-w-5xl mx-auto z-10">
+        <div class="bg-custom-card glass-card rounded-3xl p-8 sm:p-12 text-center border border-white/5 relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <h2 class="text-3xl font-bold mb-4 text-custom-main">The Community</h2>
+            <p class="max-w-2xl mx-auto text-custom-secondary mb-8 leading-relaxed">
+                Meet other Fuzzgaze fans, share your thoughts, talk about the latest videos, and hang out with the community.
+            </p>
+            <a href="#discord" class="inline-block px-8 py-3.5 bg-[#3B82F6] rounded-xl hover:bg-blue-500 transition font-semibold shadow-lg shadow-blue-500/20">Join the Community</a>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section id="discord" class="relative py-16 px-6 max-w-5xl mx-auto z-10">
+        <div class="bg-gradient-to-r from-blue-950/40 via-custom-card to-custom-card glass-card rounded-3xl p-8 sm:p-12 text-center border border-blue-500/20">
+            <h2 class="text-3xl font-bold mb-4 text-custom-main">Join the Fuzzgaze Community</h2>
+            <p class="max-w-xl mx-auto text-custom-secondary mb-8">
+                Want to chat with other fans? Join the Fuzzgaze Discord and become part of the community.
+            </p>
+            <a href="#" class="inline-block px-8 py-3.5 bg-[#3B82F6] rounded-xl hover:bg-blue-500 transition font-semibold shadow-lg shadow-blue-500/25">Join Discord</a>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center border-t border-white/5">
-        <h2 class="text-3xl font-bold mb-6">About Fuzzgaze</h2>
-        <p class="text-gray-400 text-lg leading-relaxed">Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.</p>
+    <section id="about" class="relative py-20 px-6 max-w-4xl mx-auto text-center z-10 border-t border-white/5">
+        <h2 class="text-3xl font-bold mb-6 text-custom-main">About Fuzzgaze</h2>
+        <p class="text-custom-secondary text-lg leading-relaxed max-w-2xl mx-auto">
+            Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.
+        </p>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 text-center text-gray-600 text-sm border-t border-white/5">
-        <p class="font-bold text-gray-400">FUZZGAZE</p>
-        <p class="mt-4">&copy; 2026 Fuzzgaze. All rights reserved.</p>
+    <footer class="relative py-12 px-6 text-center text-custom-secondary text-sm border-t border-white/5 z-10">
+        <p class="font-bold text-custom-main text-base mb-1">FUZZGAZE</p>
+        <p class="mb-4">Fan Club & Community</p>
+        <p class="text-xs text-gray-500">&copy; 2026 Fuzzgaze. All rights reserved.</p>
     </footer>
 
 </body>
