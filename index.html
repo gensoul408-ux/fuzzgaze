@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuzzgaze | Fan Club & Community</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root {
+            --bg-main: #181A1F;
+            --bg-card: #242832;
+            --primary-blue: #3B82F6;
+            --light-blue: #60A5FA;
+            --text-main: #F3F4F6;
+            --text-secondary: #9CA3AF;
+        }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#3B82F6] selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#181A1F]/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-xl tracking-wider text-[#F3F4F6] hover:text-[#60A5FA] transition-colors">
+                FUZZGAZE
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#9CA3AF]">
+                <a href="#videos" class="hover:text-[#F3F4F6] transition-colors">Videos</a>
+                <a href="#community" class="hover:text-[#F3F4F6] transition-colors">Community</a>
+                <a href="#about" class="hover:text-[#F3F4F6] transition-colors">About</a>
+                <a href="#discord" class="hover:text-[#F3F4F6] transition-colors">Discord</a>
+            </nav>
+            <div>
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="bg-[#3B82F6] hover:bg-[#60A5FA] text-white text-sm font-medium px-4 py-2 rounded-lg transition-all shadow-lg shadow-blue-500/20">
+                    Join Discord
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="inline-block text-[#60A5FA] font-semibold text-sm tracking-widest uppercase mb-4 bg-[#242832] px-3 py-1 rounded-full border border-gray-800">
+                Fan Club & Community
+            </span>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 text-[#F3F4F6]">
+                FUZZGAZE
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-[#9CA3AF] mb-10">
+                «A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.»
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-medium px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-500/20 text-center">
+                    Watch on YouTube
+                </a>
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#242832] hover:bg-gray-700 text-[#F3F4F6] border border-gray-700 font-medium px-8 py-3 rounded-xl transition-all text-center">
+                    Join Discord
+                </a>
+                <a href="#community" class="w-full sm:w-auto bg-transparent hover:bg-[#242832]/50 text-[#9CA3AF] hover:text-[#F3F4F6] font-medium px-6 py-3 rounded-xl transition-all text-center">
+                    Explore Community &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section id="videos" class="py-20 bg-[#181A1F] border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-[#F3F4F6] mb-3">Latest Videos</h2>
+                <p class="text-[#9CA3AF] max-w-lg mx-auto">«Check out the latest videos from Fuzzgaze.»</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video Card 1 -->
+                <div class="bg-[#242832] rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all flex flex-col">
+                    <div class="aspect-video bg-gray-800 flex items-center justify-center text-[#9CA3AF] text-sm">
+                        <span>Video Thumbnail</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-[#60A5FA] font-medium mb-1 block">Upload Date: [Date]</span>
+                            <h3 class="text-lg font-semibold text-[#F3F4F6] mb-4">Video Title Goes Here</h3>
+                        </div>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#181A1F] hover:bg-[#3B82F6] text-[#F3F4F6] hover:text-white font-medium py-2.5 rounded-lg border border-gray-700 hover:border-transparent transition-all">
+                            Watch Video
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="bg-[#242832] rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all flex flex-col">
+                    <div class="aspect-video bg-gray-800 flex items-center justify-center text-[#9CA3AF] text-sm">
+                        <span>Video Thumbnail</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-[#60A5FA] font-medium mb-1 block">Upload Date: [Date]</span>
+                            <h3 class="text-lg font-semibold text-[#F3F4F6] mb-4">Video Title Goes Here</h3>
+                        </div>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#181A1F] hover:bg-[#3B82F6] text-[#F3F4F6] hover:text-white font-medium py-2.5 rounded-lg border border-gray-700 hover:border-transparent transition-all">
+                            Watch Video
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="bg-[#242832] rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all flex flex-col">
+                    <div class="aspect-video bg-gray-800 flex items-center justify-center text-[#9CA3AF] text-sm">
+                        <span>Video Thumbnail</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-[#60A5FA] font-medium mb-1 block">Upload Date: [Date]</span>
+                            <h3 class="text-lg font-semibold text-[#F3F4F6] mb-4">Video Title Goes Here</h3>
+                        </div>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#181A1F] hover:bg-[#3B82F6] text-[#F3F4F6] hover:text-white font-medium py-2.5 rounded-lg border border-gray-700 hover:border-transparent transition-all">
+                            Watch Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-[#242832]/50 border-t border-gray-800/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-[#F3F4F6] mb-4">The Community</h2>
+            <p class="text-lg text-[#9CA3AF] mb-8">
+                «Meet other Fuzzgaze fans, share your thoughts, talk about the latest videos, and hang out with the community.»
+            </p>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-medium px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-500/20">
+                Join the Community
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#181A1F] border-t border-gray-800/50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-[#F3F4F6] mb-4">About Fuzzgaze</h2>
+            <p class="text-lg text-[#9CA3AF] leading-relaxed">
+                «Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.»
+            </p>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section id="discord" class="py-20 bg-[#242832] border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-[#F3F4F6] mb-4">Join the Fuzzgaze Community</h2>
+            <p class="text-lg text-[#9CA3AF] mb-8">
+                «Want to chat with other fans? Join the Fuzzgaze Discord and become part of the community.»
+            </p>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-medium px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-500/20">
+                Join Discord
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#181A1F] border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center sm:text-left">
+                <span class="font-bold text-lg text-[#F3F4F6]">Fuzzgaze</span>
+                <p class="text-sm text-[#9CA3AF] mt-1">«Fan Club & Community»</p>
+            </div>
+            
+            <div class="flex items-center space-x-6 text-sm text-[#9CA3AF]">
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#F3F4F6] transition-colors">YouTube</a>
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#F3F4F6] transition-colors">Discord</a>
+                <a href="#community" class="hover:text-[#F3F4F6] transition-colors">Community</a>
+            </div>
+
+            <div class="text-sm text-[#9CA3AF] text-center sm:text-right">
+                <p>© Fuzzgaze. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
