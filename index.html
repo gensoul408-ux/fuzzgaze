@@ -18,7 +18,7 @@
             position: relative;
         }
         
-        /* Paleta de colores aplicada estrictamente */
+        /* Strict Color System Cards & Elements */
         .bg-custom-base { background-color: #181A1F; }
         .bg-custom-card { background-color: #242832; }
         .text-custom-main { color: #F3F4F6; }
@@ -26,7 +26,7 @@
         .text-custom-blue { color: #3B82F6; }
         .text-custom-lightblue { color: #60A5FA; }
 
-        /* Efectos de vidrio y elevación */
+        /* Glass Card with strict color */
         .glass-card { 
             background: rgba(36, 40, 50, 0.75); 
             backdrop-filter: blur(12px); 
@@ -39,11 +39,11 @@
             box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
         }
 
-        /* Animación fluida para el logo gigante de fondo */
+        /* Giant Red YouTube Logo Animation */
         @keyframes floatGiantLogo {
-            0% { transform: translate(-50%, -50%) translateY(0px) rotate(-5deg) scale(1); opacity: 0.12; }
-            50% { transform: translate(-50%, -50%) translateY(-35px) rotate(5deg) scale(1.05); opacity: 0.20; }
-            100% { transform: translate(-50%, -50%) translateY(0px) rotate(-5deg) scale(1); opacity: 0.12; }
+            0% { transform: translate(-50%, -50%) translateY(0px) rotate(-5deg) scale(1); opacity: 0.18; }
+            50% { transform: translate(-50%, -50%) translateY(-35px) rotate(5deg) scale(1.05); opacity: 0.28; }
+            100% { transform: translate(-50%, -50%) translateY(0px) rotate(-5deg) scale(1); opacity: 0.18; }
         }
 
         .giant-youtube-bg {
@@ -51,28 +51,36 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 55vw; /* Abarca gran parte de la pantalla */
+            width: 55vw;
             max-width: 700px;
             pointer-events: none;
             z-index: 0;
             animation: floatGiantLogo 10s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.4));
+        }
+
+        /* Neon Glow Effect for Top Subscribers */
+        .neon-glow {
+            color: #FF3366;
+            text-shadow: 0 0 10px rgba(255, 51, 102, 0.8), 0 0 20px rgba(255, 51, 102, 0.5), 0 0 30px rgba(255, 51, 102, 0.3);
         }
     </style>
 </head>
 <body class="bg-custom-base text-custom-main">
 
-    <!-- Logo gigante de YouTube en rojo, al fondo y en movimiento -->
+    <!-- Giant Red Glowing YouTube Logo Background -->
     <svg class="giant-youtube-bg" viewBox="0 0 24 24" fill="#FF0000">
         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
     </svg>
 
-    <!-- Navegación -->
+    <!-- Navbar -->
     <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#181A1F]/90 border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center relative z-10">
-            <h1 class="text-2xl font-bold tracking-tighter">FUZZGAZE</h1>
+            <span class="text-2xl font-bold tracking-tighter text-custom-main">FUZZGAZE</span>
             <div class="hidden md:flex gap-8 text-sm font-semibold text-custom-secondary">
                 <a href="#" class="hover:text-custom-blue transition">Home</a>
                 <a href="#videos" class="hover:text-custom-blue transition">Videos</a>
+                <a href="#subscribers" class="hover:text-custom-blue transition">Top Subscribers</a>
                 <a href="https://discord.gg/yp6mdNXWr" target="_blank" class="hover:text-custom-blue transition">Community</a>
                 <a href="#about" class="hover:text-custom-blue transition">About</a>
             </div>
@@ -80,10 +88,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="py-32 px-6 text-center relative z-10">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight">FUZZGAZE</h2>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight text-custom-main">FUZZGAZE</h1>
             <p class="text-2xl text-custom-lightblue font-medium mb-6">Fan Club & Community</p>
             <p class="text-custom-secondary text-lg mb-12 leading-relaxed">A place for Fuzzgaze fans to hang out, chat, discover new content, and stay connected with the community.</p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
@@ -93,7 +101,23 @@
         </div>
     </header>
 
-    <!-- Top Videos Section -->
+    <!-- Top Subscribers Section -->
+    <section id="subscribers" class="py-20 px-6 max-w-4xl mx-auto relative z-10">
+        <div class="bg-custom-card glass-card rounded-3xl p-8 sm:p-12 text-center border border-white/5 shadow-2xl">
+            <h2 class="text-3xl font-bold mb-3 text-custom-main">Top Subscribers</h2>
+            <p class="text-custom-secondary text-sm mb-8">Shoutout to the amazing top supporters of the channel!</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-black/30 border border-white/5 p-4 rounded-xl font-bold tracking-wide neon-glow hover:scale-105 transition">vyxmda</div>
+                <div class="bg-black/30 border border-white/5 p-4 rounded-xl font-bold tracking-wide neon-glow hover:scale-105 transition">andrewfne</div>
+                <div class="bg-black/30 border border-white/5 p-4 rounded-xl font-bold tracking-wide neon-glow hover:scale-105 transition">centurymessedup</div>
+                <div class="bg-black/30 border border-white/5 p-4 rounded-xl font-bold tracking-wide neon-glow hover:scale-105 transition">fuzzgaze</div>
+                <div class="bg-black/30 border border-white/5 p-4 rounded-xl font-bold tracking-wide neon-glow hover:scale-105 transition sm:col-span-2 md:col-span-1">sebas058</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Videos -->
     <section id="videos" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-16">
             <h3 class="text-4xl font-bold mb-4">Top Videos</h3>
@@ -101,21 +125,18 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Video 2 -->
             <div class="bg-custom-card glass-card p-6 rounded-3xl hover-lift">
                 <span class="text-custom-blue font-bold text-lg mb-4 block">#2</span>
                 <iframe class="w-full aspect-[9/16] rounded-2xl mb-6 bg-black" src="https://www.youtube.com/embed/gFKX3EmAAfo"></iframe>
                 <a href="https://YouTube.com/@Fuzzgaze" target="_blank" class="block w-full py-3 bg-white/5 rounded-xl text-center font-bold hover:bg-[#3B82F6] transition">Watch Video</a>
             </div>
             
-            <!-- Video 1 (Main) -->
             <div class="bg-custom-card glass-card p-8 rounded-3xl hover-lift border-2 border-blue-500/20">
                 <span class="text-custom-blue font-bold text-xl mb-4 block">#1</span>
                 <iframe class="w-full aspect-[9/16] rounded-2xl mb-6 bg-black" src="https://www.youtube.com/embed/8dSYVh5qOPI"></iframe>
                 <a href="https://YouTube.com/@Fuzzgaze" target="_blank" class="block w-full py-4 bg-[#3B82F6] rounded-xl text-center font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Watch Video</a>
             </div>
 
-            <!-- Video 3 -->
             <div class="bg-custom-card glass-card p-6 rounded-3xl hover-lift">
                 <span class="text-custom-blue font-bold text-lg mb-4 block">#3</span>
                 <iframe class="w-full aspect-[9/16] rounded-2xl mb-6 bg-black" src="https://www.youtube.com/embed/iUizQBsTRPM"></iframe>
@@ -131,6 +152,14 @@
             <p class="text-custom-secondary text-lg mb-10">Meet other Fuzzgaze fans, share your thoughts, talk about the latest videos, and hang out with the community.</p>
             <a href="https://discord.gg/yp6mdNXWr" target="_blank" class="px-10 py-4 bg-[#3B82F6] rounded-2xl font-bold hover:bg-blue-500 transition inline-block">Join the Community</a>
         </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center relative z-10 border-t border-white/5">
+        <h2 class="text-3xl font-bold mb-6 text-custom-main">About Fuzzgaze</h2>
+        <p class="text-custom-secondary text-lg leading-relaxed max-w-2xl mx-auto">
+            Fuzzgaze is a YouTube creator with a growing community of fans. This website is a place for his community to stay connected and discover his latest content.
+        </p>
     </section>
 
     <!-- Footer -->
