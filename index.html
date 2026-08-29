@@ -39,37 +39,34 @@
             box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
         }
 
-        /* Animación de los logos de YouTube en el fondo */
-        @keyframes floatLogo {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.04; }
-            50% { transform: translateY(-40px) rotate(8deg); opacity: 0.09; }
-            100% { transform: translateY(0px) rotate(0deg); opacity: 0.04; }
+        /* Animación fluida para el logo gigante de fondo */
+        @keyframes floatGiantLogo {
+            0% { transform: translate(-50%, -50%) translateY(0px) rotate(-5deg) scale(1); opacity: 0.12; }
+            50% { transform: translate(-50%, -50%) translateY(-35px) rotate(5deg) scale(1.05); opacity: 0.20; }
+            100% { transform: translate(-50%, -50%) translateY(0px) rotate(-5deg) scale(1); opacity: 0.12; }
         }
 
-        .bg-youtube-logo {
-            position: absolute;
+        .giant-youtube-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55vw; /* Abarca gran parte de la pantalla */
+            max-width: 700px;
             pointer-events: none;
             z-index: 0;
-            animation: floatLogo 8s ease-in-out infinite;
+            animation: floatGiantLogo 10s ease-in-out infinite;
         }
     </style>
 </head>
 <body class="bg-custom-base text-custom-main">
 
-    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <svg class="bg-youtube-logo" style="top: 10%; left: 8%; width: 90px; animation-duration: 9s;" viewBox="0 0 24 24" fill="#3B82F6">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
+    <!-- Logo gigante de YouTube en rojo, al fondo y en movimiento -->
+    <svg class="giant-youtube-bg" viewBox="0 0 24 24" fill="#FF0000">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
 
-        <svg class="bg-youtube-logo" style="top: 40%; right: 10%; width: 120px; animation-duration: 12s; animation-delay: 2s;" viewBox="0 0 24 24" fill="#60A5FA">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-
-        <svg class="bg-youtube-logo" style="top: 75%; left: 12%; width: 100px; animation-duration: 10s; animation-delay: 4s;" viewBox="0 0 24 24" fill="#3B82F6">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-    </div>
-
+    <!-- Navegación -->
     <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#181A1F]/90 border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center relative z-10">
             <h1 class="text-2xl font-bold tracking-tighter">FUZZGAZE</h1>
@@ -83,6 +80,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="py-32 px-6 text-center relative z-10">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight">FUZZGAZE</h2>
@@ -95,6 +93,7 @@
         </div>
     </header>
 
+    <!-- Top Videos Section -->
     <section id="videos" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-16">
             <h3 class="text-4xl font-bold mb-4">Top Videos</h3>
@@ -102,18 +101,21 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Video 2 -->
             <div class="bg-custom-card glass-card p-6 rounded-3xl hover-lift">
                 <span class="text-custom-blue font-bold text-lg mb-4 block">#2</span>
                 <iframe class="w-full aspect-[9/16] rounded-2xl mb-6 bg-black" src="https://www.youtube.com/embed/gFKX3EmAAfo"></iframe>
                 <a href="https://YouTube.com/@Fuzzgaze" target="_blank" class="block w-full py-3 bg-white/5 rounded-xl text-center font-bold hover:bg-[#3B82F6] transition">Watch Video</a>
             </div>
             
+            <!-- Video 1 (Main) -->
             <div class="bg-custom-card glass-card p-8 rounded-3xl hover-lift border-2 border-blue-500/20">
                 <span class="text-custom-blue font-bold text-xl mb-4 block">#1</span>
                 <iframe class="w-full aspect-[9/16] rounded-2xl mb-6 bg-black" src="https://www.youtube.com/embed/8dSYVh5qOPI"></iframe>
                 <a href="https://YouTube.com/@Fuzzgaze" target="_blank" class="block w-full py-4 bg-[#3B82F6] rounded-xl text-center font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Watch Video</a>
             </div>
 
+            <!-- Video 3 -->
             <div class="bg-custom-card glass-card p-6 rounded-3xl hover-lift">
                 <span class="text-custom-blue font-bold text-lg mb-4 block">#3</span>
                 <iframe class="w-full aspect-[9/16] rounded-2xl mb-6 bg-black" src="https://www.youtube.com/embed/iUizQBsTRPM"></iframe>
@@ -122,7 +124,8 @@
         </div>
     </section>
 
-    <section id="community" class="py-24 px-6 bg-[#1F222A] relative z-10">
+    <!-- Community Section -->
+    <section id="community" class="py-24 px-6 bg-[#1F222A]/80 backdrop-blur-md relative z-10">
         <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl text-center border border-white/5">
             <h3 class="text-4xl font-bold mb-6">The Community</h3>
             <p class="text-custom-secondary text-lg mb-10">Meet other Fuzzgaze fans, share your thoughts, talk about the latest videos, and hang out with the community.</p>
@@ -130,6 +133,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-16 px-6 text-center border-t border-white/5 relative z-10">
         <p class="text-custom-main font-bold text-lg mb-2">FUZZGAZE</p>
         <p class="text-custom-secondary text-sm">© 2026 Fuzzgaze. All rights reserved.</p>
